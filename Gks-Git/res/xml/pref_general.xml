@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_name"
+        android:inputType="textCapWords"
+        android:key="pref_username"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_display_name" />
+    
+	<EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_pass"
+        android:inputType="textPassword" 
+        android:key="pref_password"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_display_pass"
+        android:summary="****" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="pref_wifionly"
+        android:summary="@string/pref_description_wifi_only"
+        android:title="@string/pref_title_wifi_only" />
+</PreferenceScreen>

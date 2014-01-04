@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SearchActivity" 
+    android:configChanges="orientation|screenSize"
+    >
+<!-- search area -->
+ <LinearLayout
+     android:id="@+id/LayoutSearch"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentTop="true"
+     android:background="@drawable/torrent_card"
+     android:weightSum="10" >
+	
+    <EditText
+        android:id="@+id/searchfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:hint="@string/enter_launch"
+        android:imeActionLabel="@string/launch"
+        android:imeOptions="actionSearch"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+</LinearLayout>
+
+<!-- result area -->
+
+<ListView
+    android:id="@+id/torrentList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/LayoutSearch" 
+	android:layout_above="@+id/navbar"
+	android:layout_marginBottom="8px"
+	android:layout_marginTop="8px"
+	android:saveEnabled="true"
+    >
+
+</ListView>
+
+<!-- nav bar -->
+
+ <LinearLayout
+     android:id="@+id/navbar"
+     android:layout_width="fill_parent"
+     android:layout_height="48dp"
+     android:background="@drawable/torrent_card"
+     android:layout_alignParentBottom="true"
+     android:layout_alignParentRight="true"
+     >
+
+        <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
+                android:id="@+id/navbtn_prev"
+                android:background="@drawable/torrent_card"
+                android:src="@drawable/ic_prev"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:contentDescription="prev"
+                />
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/torrent_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/navbtn_list"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:padding="4dp">
+
+            <ProgressBar
+                    android:layout_width="42dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/subcat_progressbar"
+                    android:indeterminate="false"
+                    android:visibility="invisible"
+                    android:padding="8dp"
+                    android:layout_weight="0"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="0"
+                    android:id="@+id/navbar_pagesText"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    
+                    android:singleLine="true"/>
+
+           
+        </LinearLayout>
+
+        <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
+                android:id="@+id/navbtn_next"
+                android:background="@drawable/torrent_card"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_next"
+                android:padding="5dp"
+                android:contentDescription="next"/>
+
+    </LinearLayout>
+</RelativeLayout>

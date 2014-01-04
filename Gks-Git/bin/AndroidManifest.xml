@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gks2.app"
+    android:versionCode="5"
+    android:versionName="0.42b" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/official_logo_b"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.gks2.app.HomeActivity"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.gks2.app.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="com.gks2.app.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gks2.app.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.gks2.app.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:parentActivityName="com.gks2.app.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gks2.app.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.gks2.app.TorrentDetailActivity"
+            android:label="@string/title_activity_torrent_detail"
+            android:parentActivityName="com.gks2.app.SearchActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gks2.app.SearchActivity" />
+        </activity>
+        <activity
+            android:name="com.gks2.app.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.gks2.app.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.gks2.app.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gks2.app.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.gks2.app.CollectionBookMarkActivity"
+            android:label="@string/title_activity_book_mark" >
+        </activity>
+        <activity
+            android:name="com.gks2.app.BookMarkActivity"
+            android:label="@string/title_activity_book_mark" >
+        </activity>
+    </application>
+
+</manifest>

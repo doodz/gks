@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="bookmark_torrents">Torrents</string>
+    <string name="bookmark_forums">Forums</string>
+    <string name="bookmark_wiki">Wiki</string>
+    <string name="bookmark_requests">Requests</string>
+    
+    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
+    
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="gks_no_freeLeeh">"No FreeLeech"</string>
+    <string name="gks_freeLeeh">"gks_freeLeeh"</string>
+    <string name="all_cat">"All categories"</string>
+    <string name="sort_by">"Sort By"</string>
+    <string name="category">"Category"</string>
+    <string name="exact">Exact Phrase</string>
+    <string name="refresh">refresh</string>
+    <string name="help">help</string>
+    <string name="donate">donate</string>
+    <string name="donate_050e">Offrez-moi un malabar ! (€ 0.5)</string>
+    <string name="donate_100e">Offrez-moi un café ! (€ 1,-)</string>
+    <string name="donate_200e">Offrez-moi un forfait Free ! (€ 2,-)</string>
+    <string name="donate_500e">Offrez-moi une ÉNORME bière :D (€ 5,-)</string>
+    <string name="considerDonate">you like ?</string>
+    <string name="gks_username">gksUser</string>
+    <string name="gks_class">(Class...)</string>
+    <string name="gks_GoLeft">0.00 Go</string>
+    <string name="gks_Avatar">Avatar</string>
+    <string name="app_name">gks</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="Save">Save</string>
+    <string name="Unlog_mode">Unlogged mode</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="empty"></string>
+    <string name="uploaded">Uploaded</string>
+    <string name="downloaded">Downloaded</string>
+    <string name="ratio">Ratio</string>
+    <string name="karma">Karma</string>
+    <string name="aura">Aura</string>
+    <string name="userclass">Class</string>
+    <string name="search">Search</string>
+    <string name="s_title">Search Title</string>
+    <string name="s_desc">Search description</string>
+    <string name="s_size">Search size</string>
+    <string name="noResult">Torrent not found</string>
+    <string name="enter_launch">enter your search</string>
+    <string name="launch">Launch</string>
+    <string name="progress_dialog_title_getprez">Searching presentation...</string>
+    <string name="progress_dialog_title_searching">Searching...</string>
+    <string name="progress_dialog_title_downloading">Downloading...</string>
+    <string name="progress_dialog_title_connecting">Connecting...</string>
+    <string name="progress_dialog_message_prefix_downloading">Downloading file</string>
+    <string name="progress_dialog_message_prefix_connecting">Connecting to</string>
+    <string name="user_message_download_complete">Download complete!</string>
+    <string name="user_message_download_canceled">Download canceled!</string>
+    <string name="error_message_bad_url">Error: Invalid URL!</string>
+    <string name="error_message_file_not_found">Error: File not found!</string>
+    <string name="error_message_general">Error downloading file!</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_torrent_detail">TorrentDetailActivity</string>
+    <string name="filter">Filter</string>
+    <string name="title_activity_book_mark">BookMarkActivity</string>
+
+</resources>

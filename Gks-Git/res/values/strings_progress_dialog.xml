@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="progress_dialog_bookmark_succes">Adding Done</string>
+    <string name="progress_dialog_bookmark_error">Adding error</string>
+     <string name="progress_dialog_is_not_connected ">You do not have internet access</string>
+</resources>

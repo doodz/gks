@@ -1,0 +1,21 @@
+************************
+    changeLog.txt
+************************
+
+xx-12-2013 0.42b-6
+- Ajout Nfo dans les presentations
+- Ajout verification si il y a une connection internet 
+- Fix bug gks Freeleeh
+- Implementation des Bookmarks
+
+29-12-2013 0.42b-5
+- Ajout option browser
+- Ajout option Gracetime
+- Ajout option cookie
+- Ajout autoget dans le contexte menu torrent
+- Ajout bookmark dans le contexte menu torrent
+
+28-12-2013 0.42b-4
+- Ajout du "Navigation Drawer"
+- Ajout de l'activite "Settings"
+- Ajout d'icons de Categorie

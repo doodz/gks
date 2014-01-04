@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/searchmenu"
+          android:icon="@android:drawable/ic_menu_search"
+          android:title="@string/search"
+          android:showAsAction="ifRoom"/>
+    
+    <item android:id="@+id/refreshmenu"
+          android:title="@string/refresh"
+          android:icon="@android:drawable/ic_menu_rotate"
+          android:showAsAction="ifRoom"/>
+    
+    <item android:id="@+id/helpmenu"
+          android:title="@string/help"
+          android:icon="@android:drawable/ic_menu_help"/>
+   
+</menu>

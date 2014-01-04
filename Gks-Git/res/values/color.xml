@@ -1,0 +1,10 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<resources>
+    <color name="red">#ffff0000</color>
+    <color name="gray">#3E3C3C</color>
+    <color name="gks_color_userName">#4e70f8</color>
+    <color name="gks_color_userClass">#AA000000</color>
+    <color name="gks_color_GoLeft">#00D000</color>
+    <color name="gks_color_UpLeft">#FF6600</color>
+    <color name="gks_color_ratio">#418B00</color>
+</resources>

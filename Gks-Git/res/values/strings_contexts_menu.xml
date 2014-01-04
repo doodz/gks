@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="menu_torrent_details">Details</string>
+     <string name="menu_torrent_download">Download</string>
+     <string name="menu_torrent_bookmark">BookMark It</string>
+     <string name="menu_torrent_autoget">AutoGet It</string>
+     <string name="menu_torrent_summary">Consult the Summary</string>
+</resources>

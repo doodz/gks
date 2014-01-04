@@ -1,0 +1,116 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<resources>
+    <array name="menu">
+        <item>Account</item>
+        <item>bookmark</item>
+        <item>snatched</item>
+        <item>serieswatch</item>
+        <item>Pictures</item>
+        <item>autoget</item>
+        <item>Mailbox</item>
+        <item>Top torrent</item>
+        <item>My Statistics</item>
+        <item>Settings</item>
+        <item>About</item>
+    </array>
+    
+    
+     <integer-array name="category_value">
+		<item value="all" >0</item>
+		<item value="Windows">3</item>
+		<item value="Mac"> 4 </item>
+		<item value="DVDRip/BDRip"> 5 </item>
+		<item value="DVDRip/BDRip VOSTFR">  6</item>
+		<item value="Emissions TV"> 7 </item>
+		<item value="Docs">  8</item>
+		<item value="Docs HD"> 9 </item>
+		<item value="TV PACK"> 10 </item>
+		<item value="TV VOSTFR"> 11 </item>
+		<item value="TV VF"> 12 </item>
+		<item value="TV HD VOSTFR"> 13 </item>
+		<item value="TV HD VF"> 14 </item>
+		<item value="HD 720p"> 15 </item>
+		<item value="HD 1080p "> 16 </item>
+		<item value="Full BluRay"> 17 </item>
+		<item value="Divers"> 18 </item>
+		<item value="DVDR"> 19 </item>
+		<item value="DVDR Series"> 20 </item>
+		<item value="Anime"> 21 </item>
+		<item value="TV VO"> 22 </item>
+		<item value="Concerts"> 23 </item>
+		<item value="eBooks"> 24 </item>
+		<item value="Sport"> 28 </item>
+		<item value="PC Games"> 29 </item>
+		<item value="Nintendo DS"> 30 </item>
+		<item value="Wii"> 31 </item>
+		<item value="Xbox 360"> 32 </item>
+		<item value="PSP"> 34 </item>
+		<item value="PSX/PS2/PS3"> 38 </item>
+		<item value="Flac"> 39 </item>		
+	</integer-array>
+    
+    
+    <array name="category">
+		<item value="0" > @string/all_cat </item>
+		<item value="3"> Windows </item>
+		<item value="4"> Mac </item>
+		<item value="5"> DVDRip/BDRip </item>
+		<item value="6"> DVDRip/BDRip VOSTFR </item>
+		<item value="7"> Emissions TV </item>
+		<item value="8"> Docs </item>
+		<item value="9"> Docs HD </item>
+		<item value="10"> TV PACK </item>
+		<item value="11"> TV VOSTFR </item>
+		<item value="12"> TV VF </item>
+		<item value="13"> TV HD VOSTFR </item>
+		<item value="14"> TV HD VF </item>
+		<item value="15"> HD 720p </item>
+		<item value="16"> HD 1080p </item>
+		<item value="17"> Full BluRay </item>
+		<item value="18"> Divers </item>
+		<item value="19"> DVDR </item>
+		<item value="20"> DVDR Series </item>
+		<item value="21"> Anime </item>
+		<item value="22"> TV VO </item>
+		<item value="23"> Concerts </item>
+		<item value="24"> eBooks </item>
+		<item value="28"> Sport </item>
+		<item value="29"> PC Games </item>
+		<item value="30"> Nintendo DS </item>
+		<item value="31"> Wii </item>
+		<item value="32"> Xbox 360 </item>
+		<item value="34"> PSP </item>
+		<item value="38"> PSX/PS2/PS3 </item>
+		<item value="39"> Flac </item>		
+	</array>
+
+    <array name="sortby" >
+		<item value="normal">Par Pertinence</item>
+		<item value="date">Par Date</item>
+		<item value="coms">Par Commentaires</item>
+		<item value="size">Par Taille</item>
+		<item value="complets">Par Complétés</item>
+		<item value="seeders">Par Seeders</item>
+		<item value="leechers">Par Leechers</item>
+	</array>
+	
+     <array name="sortby_value" >
+		<item>normal</item>
+		<item>date"</item>
+		<item>coms</item>
+		<item>size</item>
+		<item>complets</item>
+		<item>seeders</item>
+		<item>leechers</item>
+	</array>
+    
+     <array name="order_value">
+		<item>desc</item>
+		<item>asc</item>
+	</array>
+     
+	<array name="order">
+		<item value="desc">Descending</item>
+		<item value="asc">Ascending</item>
+	</array>
+</resources>

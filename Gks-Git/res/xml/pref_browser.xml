@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_useragent"
+        android:inputType="textCapWords"
+        android:key="pref_useragent"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_display_useragent" />
+	
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_gracetime"
+        android:inputType="number"
+        android:key="pref_gracetime"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_gracetime"
+		android:summary="@string/pref_description_gracetime"/>
+    
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_cookiestore"
+        android:summary="@string/pref_description_cookie_Store"
+        android:title="@string/pref_title_cookie_Store" />
+	
+</PreferenceScreen>

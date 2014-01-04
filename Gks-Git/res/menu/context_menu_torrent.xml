@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/context_menu_torrent_details"
+        android:title="@string/menu_torrent_details"
+          android:icon="@android:drawable/ic_menu_edit"/>
+    
+	 <item android:id="@+id/context_menu_torrent_download"
+	     android:title="@string/menu_torrent_download"
+          android:icon="@android:drawable/ic_menu_add"/>
+	 
+	 <item android:id="@+id/context_menu_torrent_bookmark"
+        android:title="@string/menu_torrent_bookmark"
+          android:icon="@android:drawable/ic_menu_add"/>
+	 
+	 <item android:id="@+id/context_menu_torrent_autoget"
+	     android:title="@string/menu_torrent_autoget"
+          android:icon="@android:drawable/ic_menu_add"/>
+	 
+	 <item android:id="@+id/context_menu_torrent_summary"
+        android:title="@string/menu_torrent_summary"
+          android:icon="@android:drawable/ic_menu_add"/>
+
+</menu>
