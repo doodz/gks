@@ -41,7 +41,8 @@ public class SearchEntry {
 				if(FreeLeech)  
 					result.put("icon",  String.valueOf(R.drawable.ic_torrent_freeleech));
 				else
-					result.put("icon",  String.valueOf(R.drawable.ic_torrent_default));
+					result.put("icon","");
+					//result.put("icon",  String.valueOf(R.drawable.ic_torrent_default));
 				if(getImgCat() != -1)
 				{
 					result.put("typeIcon",  String.valueOf(getImgCat()));

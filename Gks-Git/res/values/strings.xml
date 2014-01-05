@@ -11,7 +11,7 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="gks_no_freeLeeh">"No FreeLeech"</string>
-    <string name="gks_freeLeeh">"gks_freeLeeh"</string>
+    <string name="gks_freeLeeh">"gks_freeLeech"</string>
     <string name="all_cat">"All categories"</string>
     <string name="sort_by">"Sort By"</string>
     <string name="category">"Category"</string>

@@ -92,10 +92,10 @@ public class BookMarkTask extends HttpAsyncTask<BookMarkRequest, List<List<BookM
 		result.Size = DataSize.parseSize(column.text());
 		
 		column = colIt.next(); //columnQtSeeder
-		Integer.parseInt(column.select("span.upload").text());
+		result.qtSeeders = Integer.parseInt(column.select("span.upload").text());
 		
 		column = colIt.next(); //columnQlLeecher
-		Integer.parseInt(column.select("span.download").text());
+		result.qtLeechers =  Integer.parseInt(column.select("span.download").text());
 		
 		column = colIt.next(); //columnDL
 		m = numberExtract.matcher(column.child(0).attr("href")); 

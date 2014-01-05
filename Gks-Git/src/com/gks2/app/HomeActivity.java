@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +27,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +36,7 @@ import android.widget.Toast;
 import com.gks2.api.scrapper.God;
 import com.gks2.api.scrapper.LoginTask;
 import com.gks2.api.scrapper.UserProfile;
+import com.gks2.helper.StorageHelper;
 import com.google.analytics.tracking.android.EasyTracker;
 
 public class HomeActivity extends Activity {
@@ -56,6 +60,7 @@ public class HomeActivity extends Activity {
     private CharSequence mDrawerTitle;
     private ActionBarDrawerToggle mDrawerToggle;
     private String[] mMenuTitles;
+    
     private Handler handler = new Handler() {
         
         public void handleMessage(android.os.Message msg) {
@@ -295,6 +300,7 @@ public class HomeActivity extends Activity {
 			     	{
 			     		setChartRatio(null);
 						setUserValues();
+						setAvatar();
 			     	}
 				}
 			}
@@ -313,6 +319,7 @@ public class HomeActivity extends Activity {
 	     	{
 	     		setChartRatio(null);
 				setUserValues();
+				setAvatar();
 	     	}
 			
 		}else{
@@ -403,11 +410,28 @@ public class HomeActivity extends Activity {
 		 HomeActivity.this.ringProgressDialog.dismiss();
 	 }
 	 
+	
+	private void setAvatar(){
+		final ImageView avatar = (ImageView) HomeActivity.this.findViewById(R.id.hAvatar);
+		String urlAvatar = prefs.getString("avatar","");
+		if(!urlAvatar.trim().isEmpty()){
+			Bitmap bmp = this.api.getUserProfile().avatarBMP;
+			if(bmp != null){
+			StorageHelper.saveToInternalSorage(bmp,HomeActivity.this.getApplicationContext());
+			avatar.setImageBitmap(bmp);
+			}
+			else{
+				bmp = StorageHelper.loadImageFromStorage(HomeActivity.this.getApplicationContext());
+				if(bmp != null) avatar.setImageBitmap(bmp);
+			}
+		}
+		
+	} 
 	 /**
 	  * Called when the activity is resumed or created
 	  */
 	public void setUserValues(){
- 
+		
 		final TextView ratioCtrl = ((TextView) findViewById(R.id.ratioField));
 		final TextView upField = ((TextView) findViewById(R.id.upField));
 		final TextView downField = ((TextView) findViewById(R.id.downField));
@@ -462,6 +486,7 @@ public class HomeActivity extends Activity {
 				@Override 
 				public void update(Observable observable, Object data) {
 					setUserValues();
+					setAvatar();
 				}
 			};
 		
@@ -505,6 +530,8 @@ public class HomeActivity extends Activity {
 			 freeLeechField.setText(data[0]+data[1]);
 		 }else{
 			 Toast.makeText(HomeActivity.this,getString(R.string.gks_no_freeLeeh),Toast.LENGTH_SHORT).show();
+			 final LinearLayout freeLeech = (LinearLayout) findViewById(R.id.LinearLayoutFL);
+			 freeLeech.setVisibility(View.INVISIBLE);
 			 /*HomeActivity.this.doLogin(
 						prefs.getString("pref_username", "unamed"),
 						prefs.getString("pref_password", "p4ssw0rd"));*/

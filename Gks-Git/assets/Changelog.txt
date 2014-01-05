@@ -5,8 +5,9 @@
 xx-12-2013 0.42b-6
 - Ajout Nfo dans les presentations
 - Ajout verification si il y a une connection internet 
-- Fix bug gks Freeleeh
+- Fix bug gks Freeleech
 - Implementation des Bookmarks
+- Ajout Avatar
 
 29-12-2013 0.42b-5
 - Ajout option browser

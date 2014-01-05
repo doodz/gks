@@ -2,6 +2,7 @@ package com.gks2.api.scrapper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.preference.PreferenceManager;
 
 
@@ -13,6 +14,7 @@ public class UserProfile {
 	public String registeringDate = "";
 	public String lastVisiteDate = "";
 	
+	public Bitmap avatarBMP = null;
 	//public DataSize uploadedTotalData = null;
 	//public DataSize downloadedTotalData = null;
 	public String uploadedTotalData = "";
@@ -28,12 +30,13 @@ public class UserProfile {
 	public String ratioreq = "";
 	public String authKey = "";
 	public String chartRatio = "";
+	public String avatar = "";
 	
 	public void fill(Context context){
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-		this.username = prefs.getString("username"," ");
-		this.userid = prefs.getString("userid"," "); 
+		this.username = prefs.getString("pref_username"," ");
+		this.userid = prefs.getString("pref_password"," "); 
 		this.registeringDate = prefs.getString("registeringDate"," ");
 		this.lastVisiteDate = prefs.getString("lastVisiteDate"," ");
 		this.uploadedTotalData = prefs.getString("uploadedTotalData"," ");
@@ -48,7 +51,7 @@ public class UserProfile {
 		this.ratio= prefs.getString("ratio"," ");
 		this.ratioreq = prefs.getString("ratioreq"," ");
 		this.authKey = prefs.getString("authKey"," ");
-		
+		this.avatar = prefs.getString("avatar"," ");
 	}
 	
 	

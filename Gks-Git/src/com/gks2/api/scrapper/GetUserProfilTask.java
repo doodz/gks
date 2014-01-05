@@ -1,5 +1,8 @@
 package com.gks2.api.scrapper;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Iterator;
 
 import org.apache.http.HttpResponse;
@@ -8,7 +11,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.util.Log;
+
+import com.gks2.helper.StorageHelper;
 
 public class GetUserProfilTask extends HttpAsyncTask<String, Integer>{
 	
@@ -22,6 +30,10 @@ public class GetUserProfilTask extends HttpAsyncTask<String, Integer>{
 		final String content = getStringContent(httpResp);
 		final Document htmlResponse = Jsoup.parse(content);
 		//HeaderFooterScrapper.readPage(htmlResponse, profile);
+		
+		Element elementAvatar = htmlResponse.select("div#avatar>img").first();
+		if(elementAvatar != null)
+			this.getAvatar(elementAvatar,profile);
 		Element resultEntrie = htmlResponse.select("#userlink").first();
 		if(resultEntrie != null)
 			parseForUserId(resultEntrie, profile);
@@ -39,6 +51,30 @@ public class GetUserProfilTask extends HttpAsyncTask<String, Integer>{
 	}
 	
 	/***
+	 * retrieve avatar from url
+	 * @param p
+	 * @param userProfile
+	 */
+	private void getAvatar(Element p,UserProfile userProfile){
+		
+		String urlAvatar = p.attr("src");
+		URL url;
+		try {
+			
+			url = new URL(urlAvatar);
+			Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+			userProfile.avatarBMP = bmp;
+			userProfile.avatar = urlAvatar;
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/***
 	 * set user info from html to userProfile class
 	 * @param p
 	 * @param userProfile
@@ -49,7 +85,7 @@ public class GetUserProfilTask extends HttpAsyncTask<String, Integer>{
 		Element columnNom = colIt.next();
 		userProfile.username = columnNom.child(1).select("label.radiocheck").text();
 		
-		colIt.next(); //Titre Personnalisé		
+		colIt.next(); //Titre Personnalis	
 		Element columnClass = colIt.next();
 		userProfile.userclass =  columnClass.child(1).select("label.radiocheck").text();
 		
@@ -81,7 +117,7 @@ public class GetUserProfilTask extends HttpAsyncTask<String, Integer>{
 		
 		colIt.next(); // Torrents up
 		colIt.next(); // Requests
-		colIt.next(); // Communauté
+		colIt.next(); // Communaut
 		colIt.next(); // Badges
 		colIt.next(); // Passkey
 		colIt.next();

@@ -73,8 +73,8 @@ public class BookMarkListFragment extends ListFragment {
 	    	final ListAdapter adpt = new SimpleAdapter(fa,
 	    			formatedData,
 					R.layout.torrent_listitem,
-					new String[]{"Name","Size","qtSeeders","qtLeechers"},
-					new int[] {R.id.tTitle,R.id.tSize ,R.id.tSeeders,R.id.tLeechers});
+					new String[]{"Name", "Size", "", "","qtSeeders", "qtLeechers"},
+					new int[] {R.id.tTitle, R.id.tSize, R.id.tIcon, R.id.tCat, R.id.tSeeders, R.id.tLeechers});
 	    	BookMarkListFragment.this.setListAdapter(adpt);
 	    	
 	    	

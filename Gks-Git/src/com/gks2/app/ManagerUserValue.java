@@ -66,7 +66,7 @@ public class ManagerUserValue {
 		UserProfile profile = api.getUserProfile();
 		prefs = PreferenceManager.getDefaultSharedPreferences(this.context);
 		Editor editor = prefs.edit();
-		editor.putString("username", profile.username);
+		editor.putString("pref_username", profile.username);
 		editor.putString("userid", profile.userid);
 		editor.putString("registeringDate", profile.registeringDate);
 		editor.putString("lastVisiteDate", profile.lastVisiteDate);
@@ -82,6 +82,7 @@ public class ManagerUserValue {
 		editor.putString("ratio", profile.ratio);
 		editor.putString("ratioreq", profile.ratioreq);
 		editor.putString("authKey", profile.authKey);
+		editor.putString("avatar", profile.avatar);
 		editor.commit();
 	}
 
