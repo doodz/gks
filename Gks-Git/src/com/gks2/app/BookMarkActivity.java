@@ -1,6 +1,7 @@
 package com.gks2.app;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -19,11 +20,17 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.gks2.api.scrapper.AjaxRequest;
+import com.gks2.api.scrapper.AjaxTask;
 import com.gks2.api.scrapper.BookMarkEntry;
 import com.gks2.api.scrapper.BookMarkRequest;
 import com.gks2.api.scrapper.God;
+import com.gks2.api.scrapper.SortActionAjax;
+import com.gks2.api.scrapper.SortTypeAjax;
 
 public class BookMarkActivity extends FragmentActivity implements ActionBar.TabListener {
 
@@ -47,6 +54,53 @@ public class BookMarkActivity extends FragmentActivity implements ActionBar.TabL
     private String getFragmentTag(int pos){
         return "android:switcher:"+R.id.pager+":"+pos;
     }
+    
+    public int selectedItem = -42;
+
+    public void DeleteBookmark(SortTypeAjax typeAjax){
+    	
+ 		if(BookMarkActivity.this.selectedItem >= 0){
+ 			int i = mViewPager.getCurrentItem();
+ 			BookMarkListFragment f = (BookMarkListFragment) BookMarkActivity.this.getSupportFragmentManager().
+ 					findFragmentByTag(getFragmentTag(i));
+ 			
+ 			@SuppressWarnings("unchecked")
+			Map<String,String> itemSelected = (Map<String, String>) f.getListView().getItemAtPosition(selectedItem);			
+			AjaxRequest request = new AjaxRequest(Integer.parseInt(itemSelected.get("IdBookMark")),SortActionAjax.Dell,typeAjax);
+			this.ajaxTask(request);
+		 }
+ 	}
+ 	 
+ 	private void ajaxTask(AjaxRequest request){
+		
+		if(request != null)
+		 {
+
+			 final Observer onResult = new Observer() {
+					@Override
+					public void update(Observable o, Object arg) {
+						
+						Integer input = (Integer) arg;
+						
+						if(input.equals(AjaxTask.SUCCES_BOOKMARK_CODE) || input.equals(AjaxTask.SUCCES_AUTOGET_CODE)){
+							
+							int i = mViewPager.getCurrentItem();
+				 			BookMarkListFragment f = (BookMarkListFragment) BookMarkActivity.this.getSupportFragmentManager().
+				 					findFragmentByTag(getFragmentTag(i));
+							
+							
+							f.formatedData.remove(BookMarkActivity.this.selectedItem);
+							((BaseAdapter) f.getListView().getAdapter()).notifyDataSetChanged();
+						}			
+						else
+							Toast.makeText(BookMarkActivity.this, BookMarkActivity.this.getString(R.string.progress_dialog_bookmark_error), 
+									Toast.LENGTH_SHORT).show();
+						BookMarkActivity.this.selectedItem = -42;
+					}};
+			God.getInstance(BookMarkActivity.this.getApplicationContext()).setAjaxRequest(request, onResult);
+		 }		
+		
+	}
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,8 +195,7 @@ public class BookMarkActivity extends FragmentActivity implements ActionBar.TabL
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in the ViewPager.
-        mViewPager.setCurrentItem(tab.getPosition());  
-       
+        mViewPager.setCurrentItem(tab.getPosition());
     }
     
     @Override
@@ -169,19 +222,31 @@ public class BookMarkActivity extends FragmentActivity implements ActionBar.TabL
 
         @Override
         public Fragment getItem(int i) {
+        	Fragment fragment = new BookMarkListFragment();
+        	Bundle args = new Bundle();
             switch (i) {
-                case 0: return new BookMarkListFragment();
-                    // The first section of the app is the most interesting -- it offers
-                    // a launchpad into the other demonstrations in this example application.
-                    //return new LaunchpadSectionFragment();
+                case 0: 
+                    args.putInt(BookMarkListFragment.ARG_SECTION_BOOKMARK, BookMarkListFragment.BOOKMARK_TORRENT);
+                    fragment.setArguments(args);
+                    return fragment;
                 	
-                case 1: return new BookMarkListFragment();
-                case 2: return new BookMarkListFragment();
-                case 3: return new BookMarkListFragment();
+                case 1: 
+                    args.putInt(BookMarkListFragment.ARG_SECTION_BOOKMARK, BookMarkListFragment.BOOKMARK_FORUM);
+                    fragment.setArguments(args);
+                    return fragment;
+                	
+                case 2: 
+                    args.putInt(BookMarkListFragment.ARG_SECTION_BOOKMARK, BookMarkListFragment.BOOKMARK_WIKI);
+                    fragment.setArguments(args);
+                    return fragment;
+                	
+                case 3: 
+                    args.putInt(BookMarkListFragment.ARG_SECTION_BOOKMARK,BookMarkListFragment.BOOKMARK_REQUEST);
+                    fragment.setArguments(args);
+                    return fragment;
+                	
                 default:
                     // The other sections of the app are dummy placeholders.
-                    Fragment fragment = new DummySectionFragment();
-                    Bundle args = new Bundle();
                     args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
                     fragment.setArguments(args);
                     return fragment;

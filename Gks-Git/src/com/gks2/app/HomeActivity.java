@@ -211,6 +211,7 @@ public class HomeActivity extends Activity {
 	    switch (position) {
 	    case 0:
 	    	//Account
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 1 :
 	    	displayBookMark();
@@ -218,24 +219,31 @@ public class HomeActivity extends Activity {
 	    	break;
 	    case 2 :
 	    	//snatched
+	    	displaySnatched();
 	    	break;
 	    case 3 :
 	    	//serieswatch
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 4 :
 	    	//Pictures
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 5 :
 	    	//autoget
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 6 :
 	    	//Mailbox
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 7 :
 	    	//Top torrent
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 8 :
 	    	//My Statistics
+	    	Toast.makeText(HomeActivity.this,"No implemented",Toast.LENGTH_SHORT).show();
 	    	break;
 	    case 9 :
 	    	displaySettings();
@@ -248,6 +256,11 @@ public class HomeActivity extends Activity {
 	    default :
 	    	
 	    } 
+	}
+	
+	private void displaySnatched(){
+		Intent myIntent = new Intent(this, SnatchedActivity.class);
+		HomeActivity.this.startActivity(myIntent);
 	}
 	
 	private void displayBookMark(){

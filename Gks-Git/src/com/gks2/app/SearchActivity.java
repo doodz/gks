@@ -198,30 +198,30 @@ public class SearchActivity extends Activity {
 
 	
 	// This method is called when user selects an Item in the Context menu
-		 @Override
-		 public boolean onContextItemSelected(MenuItem item) {
+	 @Override
+	 public boolean onContextItemSelected(MenuItem item) {
 
-		     switch (item.getItemId()) {
-		     case R.id.context_menu_torrent_details :
-		    	 ShowPrez();
-		    	 return true;
-		     case R.id.context_menu_torrent_download :
-		    	 DownloadTorrent();
-		    	 return true;
-		     case R.id.context_menu_torrent_autoget :
-		    	 AddAutoget();
-		    	 return true;
-		     case R.id.context_menu_torrent_bookmark :
-		    	 AddBookMark();
-		    	 return true;
-		     case R.id.context_menu_torrent_summary :
-		    	 
-		    	 return true;
+	     switch (item.getItemId()) {
+	     case R.id.context_menu_torrent_details :
+	    	 ShowPrez();
+	    	 return true;
+	     case R.id.context_menu_torrent_download :
+	    	 DownloadTorrent();
+	    	 return true;
+	     case R.id.context_menu_torrent_autoget :
+	    	 AddAutoget();
+	    	 return true;
+	     case R.id.context_menu_torrent_bookmark :
+	    	 AddBookMark();
+	    	 return true;
+	     case R.id.context_menu_torrent_summary :
+	    	 
+	    	 return true;
 
-		    default:
-		    	return true;
-		     }
-		 }
+	    default:
+	    	return true;
+	     }
+	 }
 	
 		 
 	private void AddAutoget(){

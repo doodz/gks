@@ -5,4 +5,5 @@
      <string name="menu_torrent_bookmark">BookMark It</string>
      <string name="menu_torrent_autoget">AutoGet It</string>
      <string name="menu_torrent_summary">Consult the Summary</string>
+     <string name="menu_torrent_delete">Delete</string>
 </resources>

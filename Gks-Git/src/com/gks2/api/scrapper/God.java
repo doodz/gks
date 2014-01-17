@@ -130,7 +130,7 @@ public class God {
 	public void downloadTorrent(String torrentPash, Observer onResult) {
 		
 		if(this.browser.HaveInternet()){
-			if (this.ownerProfile == null) throw new IllegalStateException("Il faut être loggé pour récupérer un torrent");
+			if (this.ownerProfile == null) throw new IllegalStateException("Il faut ï¿½tre loggï¿½ pour rï¿½cupï¿½rer un torrent");
 			DownloadTorrentTask task = new DownloadTorrentTask();
 			prepareTask(task, onResult);
 			task.execute(torrentPash);
@@ -209,6 +209,18 @@ public class God {
 		if(this.browser.HaveInternet()){
 			if (this.ownerProfile == null) throw new IllegalStateException("Must be logged in to retrieve his profile");
 			BookMarkTask task = new BookMarkTask();
+			prepareTask(task, onResult);
+			task.execute(request);
+		}else{
+			this.makeToastNoNetWork();
+		}
+	}
+	
+	public void getSnatched(String request, Observer onResult)
+	{
+		if(this.browser.HaveInternet()){
+			if (this.ownerProfile == null) throw new IllegalStateException("Must be logged in to retrieve his profile");
+			GetSnatchedTask task = new GetSnatchedTask();
 			prepareTask(task, onResult);
 			task.execute(request);
 		}else{

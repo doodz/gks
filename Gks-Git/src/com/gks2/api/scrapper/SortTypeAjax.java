@@ -4,7 +4,10 @@ public enum SortTypeAjax {
 	
 	booktorrent("booktorrent"),
 	autoget("autoget"),
-	delbookmark("delbookmark")
+	delbookmark("delbookmark"),
+	delforumbookmark("delforum"),
+	delwikiobookmark("delwiki"),
+	delrequestbookmark("delrequest")
     ;
     /**
      * @param text

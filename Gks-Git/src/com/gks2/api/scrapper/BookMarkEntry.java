@@ -12,6 +12,8 @@ public class BookMarkEntry {
 	public Integer Id = -42;
 	public String Name = "";
 	public String DateAdded = "";
+	public String Location = "";
+	public String url = "";
 	public DataSize Size;
 	public int qtSeeders;
 	public int qtLeechers;

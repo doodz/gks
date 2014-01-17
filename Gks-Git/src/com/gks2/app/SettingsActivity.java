@@ -1,7 +1,10 @@
 package com.gks2.app;
 
+import java.util.List;
+
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -15,11 +18,9 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v4.app.NavUtils;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-
-import java.util.List;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -93,7 +94,8 @@ public class SettingsActivity extends PreferenceActivity {
 		if (!isSimplePreferences(this)) {
 			return;
 		}
-
+		SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(getApplicationContext());
 		// In the simplified UI, fragments are not used at all and we instead
 		// use the older PreferenceActivity APIs.
 
@@ -133,6 +135,7 @@ public class SettingsActivity extends PreferenceActivity {
 		bindPreferenceSummaryToValue(findPreference("pref_save_path"));
 		bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
 		bindPreferenceSummaryToValue(findPreference("sync_frequency"));
+
 	}
 
 	/** {@inheritDoc} */
@@ -233,6 +236,8 @@ public class SettingsActivity extends PreferenceActivity {
 	 * @see #sBindPreferenceSummaryToValueListener
 	 */
 	private static void bindPreferenceSummaryToValue(Preference preference) {
+		
+		if(preference != null){
 		// Set the listener to watch for value changes.
 		preference
 				.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
@@ -244,6 +249,7 @@ public class SettingsActivity extends PreferenceActivity {
 				PreferenceManager.getDefaultSharedPreferences(
 						preference.getContext()).getString(preference.getKey(),
 						""));
+		}
 	}
 
 	/**

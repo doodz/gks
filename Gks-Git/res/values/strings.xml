@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+
+    <string name="bookmark_date_added">Date Added :</string>
     <string name="bookmark_torrents">Torrents</string>
     <string name="bookmark_forums">Forums</string>
     <string name="bookmark_wiki">Wiki</string>
     <string name="bookmark_requests">Requests</string>
-    
     <string name="dummy_section_text">Section %1d is just a dummy section.</string>
-    
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="gks_no_freeLeeh">"No FreeLeech"</string>
@@ -65,5 +64,6 @@
     <string name="title_activity_torrent_detail">TorrentDetailActivity</string>
     <string name="filter">Filter</string>
     <string name="title_activity_book_mark">BookMarkActivity</string>
+    <string name="title_activity_snatched">SnatchedActivity</string>
 
 </resources>

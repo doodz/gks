@@ -40,16 +40,17 @@
 
         <LinearLayout
             android:id="@+id/hWidget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:minWidth="250dp"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal">
+				
                 <TextView
                     android:id="@+id/userNameField"
                     android:layout_width="wrap_content"
@@ -64,17 +65,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="10dp"
                     android:singleLine="true"
                     android:text="@string/gks_class"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/gks_color_userClass"
                     android:textSize="12dp" />
+                
+                
+                
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible" >
+                android:visibility="visible"
+                android:orientation="horizontal" >
 
                 <TextView
                     android:id="@+id/upField"
@@ -86,7 +92,6 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/hGoLeftLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dip"
@@ -97,12 +102,40 @@
                     android:textColor="#888"
                     android:textSize="10sp"
                     android:textStyle="italic" />
+                <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right">
+                  <TextView
+				        android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+				        android:lines="1"
+		                android:maxLines="1"
+				        android:text="@string/aura"
+				        android:textColor="#888"
+		                android:textSize="10sp"
+		                android:textStyle="italic"
+		                android:gravity="right"
+		                android:layout_marginRight="10dp" /> 
+
+                  <TextView
+                      android:id="@+id/auraField"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:gravity="right"
+                      android:lines="1"
+                      android:maxLines="1"
+                      android:text="@string/aura"
+                      android:textColor="@color/gks_color_ratio"
+                      android:textSize="10sp"
+                      android:textStyle="italic" />
+  </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/downField"
@@ -114,7 +147,6 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/TextView07"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dip"
@@ -125,6 +157,34 @@
                     android:textColor="#888"
                     android:textSize="10sp"
                     android:textStyle="italic" />
+                 <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right">
+                 <TextView
+				        android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+				        android:lines="1"
+		                android:maxLines="1"
+				        android:text="@string/karma"
+				        android:textColor="#888"
+		                android:textSize="10sp"
+		                android:textStyle="italic" 
+		                android:gravity="right"
+		                android:layout_marginRight="10dp"
+		                />
+	                <TextView
+				        android:id="@+id/karmaField"
+				        android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+				        android:lines="1"
+		                android:maxLines="1"
+				        android:text="@string/karma"
+				        android:textColor="@color/gks_color_ratio"
+		                android:textSize="10sp"
+		                android:textStyle="italic" 
+		                android:gravity="right" /> 
+		         </LinearLayout>
             </LinearLayout>
  			<LinearLayout
                 android:layout_width="match_parent"
@@ -139,7 +199,6 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/TextView08"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dip"
@@ -151,25 +210,12 @@
                     android:textSize="10sp"
                     android:textStyle="italic" />
                 </LinearLayout>
-            </LinearLayout>
+    		 </LinearLayout>
         </LinearLayout>
 
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" >
-
-        <TextView
-            android:id="@+id/hLastUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="..."
-            android:textColor="#66000000"
-            android:textSize="9sp" />
-    </LinearLayout>
+   
 
     <TextView
         android:id="@+id/nameField"
@@ -179,32 +225,7 @@
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/userclassField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="left"
-        android:text="@string/userclass"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/karmaField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:text="@string/karma"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/auraField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="right"
-        android:text="@string/aura"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
 
     <!-- user graph dl -->
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="list_item_ul">Uploaded</string>
+     <string name="list_item_dl">Downloaded</string>
+     <string name="list_item_real_dl">Real Downloaded</string>
+     <string name="list_item_seed_time">Seed Time</string>
+     <string name="list_item_ratio">Ratio</string>
+      <string name="list_item_seeding">Seeding</string>
+</resources>

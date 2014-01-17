@@ -78,13 +78,16 @@ public class BookMarkTask extends HttpAsyncTask<BookMarkRequest, List<List<BookM
 	protected BookMarkEntry parseTorrent(Element tr) {
 		
 		BookMarkEntry result = new BookMarkEntry();
+		
+		
+		
 		Matcher m = numberExtract.matcher(tr.attr("id"));
 		result.IdBookMark = m.find() ? Integer.parseInt(m.group()) : -42;
 		Iterator<Element> colIt = tr.children().iterator(); // Iterator over the columns of the input
 		
 		Element column = colIt.next(); //columnName
 		result.Name = column.child(1).text();
-		
+		//result.Location = column.child(1).attr("href");
 		column = colIt.next(); //columnDateAdded
 		result.DateAdded = column.text();
 		
@@ -100,6 +103,7 @@ public class BookMarkTask extends HttpAsyncTask<BookMarkRequest, List<List<BookM
 		column = colIt.next(); //columnDL
 		m = numberExtract.matcher(column.child(0).attr("href")); 
 		result.Id = m.find() ? Integer.parseInt( m.group()) : -42;
+		result.Location = column.child(0).attr("href");
 		return result;
 	}
 	

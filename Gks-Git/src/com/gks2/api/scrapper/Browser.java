@@ -24,7 +24,7 @@ import android.util.Log;
 public class Browser {
 	
 	protected String UserAgent = "Android";//"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19";
-	protected long GraceTime = 1000; // Minimum period of inactivity between two queries
+	protected long GraceTime = 0; // Minimum period of inactivity between two queries
 	protected Boolean CookieStore = false;
 	
 	protected AndroidHttpClient client;
@@ -79,6 +79,7 @@ public class Browser {
 	public HttpResponse execute(HttpUriRequest request) {
 		try {
 			this.taskQueue.put(request); // If an request is already running, it will be blocked
+			
 			AndroidHttpClient.modifyRequestToAcceptGzipResponse(request);
 			
 			long graceDuration = getGraceDuration();

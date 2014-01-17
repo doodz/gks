@@ -59,16 +59,7 @@ public class SearchTorrentTask extends HttpAsyncTask<SearchTorrentRequest, List<
 			if(imgElements.get(i).attr("alt").equals("FreeLeech"))
 				result.FreeLeech = true;
 		}
-		
-		
-		//result.isApproved = ! (columnNom.child(0).select("span.up").isEmpty());
-		//result.isNew = ! (columnNom.child(0).select("span.down").isEmpty());
-		//Element detailsField = columnNom.child(2);
-		//result.addedDate = detailsField.child(1).text();
-		//result.uploaderName = detailsField.child(3).text();
-		
-		//m = numberExtract.matcher(colIt.next().child(0).attr("href"));
-		//if (m.find()) result.id = Integer.parseInt(m.group());
+
 		Element myNext = colIt.next();
 		result.dlLocation = myNext.child(0).attr("href");
 		m = numberExtract.matcher(result.dlLocation);
@@ -97,21 +88,6 @@ public class SearchTorrentTask extends HttpAsyncTask<SearchTorrentRequest, List<
                 .appendQueryParameter("category", request.categorie)
                 .build().toString();
 		return uri;
-		/*
-		StringBuilder result = new StringBuilder();
-		
-		result.append(searchUrl)
-			.append("?q=").append(request.request)
-			.append("&order=").append(request.sortRequest.field)
-			.append("&page=").append(request.targetedPageResult)
-			//.append("&type=").append(request.sortRequest.type.id)
-			.append("&category=").append(request.categorie);
-		//if (request.subCategorie != null) result.append("&subcat=").append(request.subCategorie);
-		for (SearchOption anOption : request.options) {
-			//result.append('&').append(anOption.groupId).append('=').append(anOption.id);
-		}
-		
-		return result.toString();*/
 	}
 
 }

@@ -2,7 +2,11 @@
     changeLog.txt
 ************************
 
-xx-12-2013 0.42b-6
+17-01-2014 0.42b-7
+- Fix Bugs
+- Debut implementation snatched (pas de pagination)
+
+12-01-2014 0.42b-6
 - Ajout Nfo dans les presentations
 - Ajout verification si il y a une connection internet 
 - Fix bug gks Freeleech
