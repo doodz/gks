@@ -21,6 +21,8 @@ import android.util.Log;
 public class SearchTorrentTask extends HttpAsyncTask<SearchTorrentRequest, List<SearchEntry>> {
 	
 	public final static String searchUrl = "https://gks.gs/sphinx/";
+	public final static String  browseUrl =  "https://gks.gs/browse/";
+	
 	private static Pattern numberExtract = Pattern.compile("\\d+");
 
 	@Override
@@ -80,7 +82,16 @@ public class SearchTorrentTask extends HttpAsyncTask<SearchTorrentRequest, List<
 	}
 	
 	public static String buildUrl(SearchTorrentRequest request) {
-		String uri = Uri.parse(searchUrl)
+		String uri;
+		if(request.request == null || request.request.isEmpty())
+			uri = Uri.parse(browseUrl)
+            .buildUpon()
+            .appendQueryParameter("order", request.sortRequest.field)
+            .appendQueryParameter("page", ""+request.targetedPageResult)
+            .appendQueryParameter("category", request.categorie)
+            .build().toString();
+		else
+			uri = Uri.parse(searchUrl)
                 .buildUpon()
                 .appendQueryParameter("q", request.request)
                 .appendQueryParameter("order", request.sortRequest.field)

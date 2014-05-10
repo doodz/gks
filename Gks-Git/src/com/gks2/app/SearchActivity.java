@@ -89,18 +89,6 @@ public class SearchActivity extends Activity {
 		setContentView(R.layout.activity_search);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
-		/*
-		Spinner spinner = (Spinner) findViewById(R.id.items_spinner);
-		// Create an ArrayAdapter using the string array and a default spinner layout
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(SearchActivity.this,
-		        R.array.category, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		spinner.setAdapter(adapter);
-		*/
-		
 		EditText editText = (EditText) findViewById(R.id.searchfield);
 		editText.setOnKeyListener(new OnKeyListener() {
 			
@@ -116,27 +104,7 @@ public class SearchActivity extends Activity {
 				return false;
 			}
 		});
-		
-		/*
-		editText.setOnEditorActionListener(new OnEditorActionListener() {
-		    @Override
-		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-		        boolean handled = false;
-		        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-		            //sendMessage();
-		        	 doSearch();
-		        	// hide virtual keyboard
-		        	 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-		             imm.hideSoftInputFromWindow(SearchActivity.getWindowToken(), 
-		                                       InputMethodManager.RESULT_UNCHANGED_SHOWN);
-		            handled = true;
-		        }
-		        	
-		        return handled;
-		    }
-		});
-		*/
-		
+
 		initButtons();
 		list = (ListView) findViewById(R.id.torrentList);
 		formatedData = (List<Map<String, String>>) getLastNonConfigurationInstance();
