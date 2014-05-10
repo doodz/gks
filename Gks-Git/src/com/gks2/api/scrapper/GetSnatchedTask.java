@@ -29,7 +29,8 @@ public class GetSnatchedTask extends HttpAsyncTask<String, List<SnatchedEntry>> 
     	
     	Elements resultEntries = searchWebPage.select("tbody>tr");
     	List<SnatchedEntry> result = new ArrayList<SnatchedEntry>(resultEntries.size());
-    	for(int i =1;i < resultEntries.size();i+=2){
+    	for(int i = 1; i < resultEntries.size(); i += 1){
+    		
     		result.add(parse(resultEntries.get(i)));
     	}
     	
@@ -42,8 +43,15 @@ public class GetSnatchedTask extends HttpAsyncTask<String, List<SnatchedEntry>> 
 		Iterator<Element> colIt = tr.children().iterator();
 		
 		Element column = colIt.next();//Column name
-		result.prezLocaion = column.child(0).attr("href");
-		result.title = column.child(0).text();
+		if(!column.text().equalsIgnoreCase("Torrent Supprimé"))
+		{
+			result.prezLocaion = column.child(0).attr("href");
+			result.title = column.child(0).text();
+		}
+		else
+		{
+			result.title = "Torrent Supprimé";
+		}
 		
 		column = colIt.next();//Column Seeding
 		result.seeding = column.child(0).attr("alt");
@@ -64,6 +72,7 @@ public class GetSnatchedTask extends HttpAsyncTask<String, List<SnatchedEntry>> 
 		result.ratio = column.child(0).text();
 		
 		column = colIt.next();//Column Dl torrent
+		if(!result.title.equalsIgnoreCase("Torrent Supprimé"))
 		result.dlLocation = column.child(0).text();
 		
 		return result;
