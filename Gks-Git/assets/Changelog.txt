@@ -2,6 +2,11 @@
     changeLog.txt
 ************************
 
+- Ajout d'une ProgressBar lors de l'actualisation du main
+
+10-05-2014 0.42b-8
+- fix bug si il y a un torrent supprimé dans les snatched
+
 17-01-2014 0.42b-7
 - Fix Bugs
 - Debut implementation snatched (pas de pagination)
